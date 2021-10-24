@@ -1,0 +1,23 @@
+
+<ion-header translucent>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+  
+</ion-header>
+<ion-content fullscreen>
+  <ion-card>
+        <img src={{movie.image}} />
+        <ion-card-header>
+          <ion-card-subtitle>{{movie.year}}</ion-card-subtitle>
+          <ion-card-title>{{movie.title}}</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          {{movie.plot}}
+        </ion-card-content>
+      </ion-card>
+   
+  
+</ion-content>

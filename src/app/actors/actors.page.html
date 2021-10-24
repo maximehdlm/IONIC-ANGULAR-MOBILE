@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <a routerLink="/home"><ion-icon name="home-outline" size="large" style="color: white; margin-left:5px"></ion-icon></a>
+    <!-- barre de recherche -->
+    <ion-searchbar
+        placeholder="ex:Anna Torv, Emily Blu..."
+        [(ngModel)]="searchTerm"
+        (ionChange)="actorSearch($event)"
+        animated></ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item *ngFor="let actor of actors">
+  <ion-card>
+    <img src={{actor.image}} />
+    <ion-card-header>
+      <ion-card-title>{{actor.title}}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <a routerLink="actor-detail/{{actor.id}}" ><h3 style="color:antiquewhite">Consulter ses films</h3></a>
+    </ion-card-content>
+  </ion-card>
+  </ion-item>
+
+</ion-content>

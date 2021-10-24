@@ -1,0 +1,39 @@
+<ion-app>
+<ion-header translucent>
+  <ion-toolbar>
+    <a routerLink="/home"><ion-icon name="home-outline" size="large" style="color: white; margin-left:5px"></ion-icon></a>
+    <!-- barre de recherche -->
+    <ion-searchbar
+        placeholder="ex:the matrix, Francis Ford C..."
+        [(ngModel)]="searchTerm"
+        animated></ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+
+  <ion-content fullscreen>
+
+  <ion-list>
+
+    <!-- je boucle la liste contenant les films -->
+
+  <ion-item *ngFor="let movie of movies | filter: searchTerm">
+    <ion-avatar slot="start">
+      <img src={{movie.image}}>
+    </ion-avatar>
+    <ion-label>
+            <h2>{{movie.title}}</h2>
+            <h3>{{movie.year}}</h3>
+            <p>{{movie.crew}}</p>
+            <a routerLink="detail/{{movie.id}}" ><ion-icon name="document-text-outline" style="color: white" size="large"></ion-icon></a>
+    </ion-label>
+  </ion-item>
+
+
+</ion-list>
+
+</ion-content>
+</ion-app>
+
+
+
+
